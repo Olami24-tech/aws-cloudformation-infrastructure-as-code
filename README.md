@@ -48,8 +48,7 @@ aws-cloudformation-infrastructure-as-code/
 └── .gitignore
 
 
-## CloudFormation Templates
-
+##CloudFormation Template
 ```
 vpc.yaml
 
@@ -88,25 +87,34 @@ Configures S3 static website hosting.
 ## Deployment
 The templates are deployed independently using the AWS CLI.
 Before deploying, validate a template:
+
 ```
 aws cloudformation validate-template \
   --template-body file://templates/vpc.yaml
+
 Example deployment:
+
 ```
 aws cloudformation create-stack \
   --stack-name my-vpc-stack \
   --template-body file://templates/vpc.yaml
+
 For templates containing IAM resources:
+
 ```
 aws cloudformation create-stack \
   --stack-name my-iam-stack \
   --template-body file://templates/iam.yaml \
   --capabilities CAPABILITY_NAMED_IAM
+
 Check stack status:
+
 ```
 aws cloudformation describe-stacks \
   --stack-name my-vpc-stack
+
 Delete a stack:
+
 ```
 aws cloudformation delete-stack \
   --stack-name my-vpc-stack
