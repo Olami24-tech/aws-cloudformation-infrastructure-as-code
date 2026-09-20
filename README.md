@@ -48,18 +48,25 @@ aws-cloudformation-infrastructure-as-code/
 └── .gitignore
 
 ## CloudFormation Templates
+```
 vpc.yaml
 Creates the networking layer, including the VPC, public/private subnets, routing, Internet Gateway, Bastion Host and related security groups.
+```
 ec2.yaml
 Creates EC2 compute resources used by the application layer.
+```
 iam.yaml
 Defines IAM roles and permissions required by the infrastructure.
+```
 asg.yaml
 Creates the Auto Scaling configuration used to scale application instances.
+```
 rds.yaml
 Creates the Amazon RDS database resources for the data tier.
+```
 s3-bucket.yaml
 Creates Amazon S3 storage resources.
+```
 s3-static.yaml
 Configures S3 static website hosting.
 
